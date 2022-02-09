@@ -12,7 +12,9 @@ var workHeadingEleText = "+ Work Experiances";
 
 const main = function() {
     meHeadingEle.addEventListener("click", aboutMe);
+    meHeadingEle.addEventListener("mouseover", changeMousePointer);
     workHeadingEle.addEventListener("click", workExperiances);
+    workHeadingEle.addEventListener("mouseover", changeMousePointer);
 }
 
 const aboutMe = function() {
@@ -43,6 +45,9 @@ const workExperiances = function() {
     setText(workHeadingEle, workHeadingEleText);     
 }
 
+const changeMousePointer = function (event) {
+    event.target.style.cursor = "pointer";
+}
 window.onload = function() {
     main();
 }
