@@ -5,12 +5,10 @@ var meDetailsExpand = false;
 var meHeadingEleText = "+ About Me";
 
 const main = function() {
-    setText(meHeadingEle, meHeadingEleText);
-    setVisible(meDetailsEle, meDetailsExpand);
-    meHeadingEle.addEventListener("click", meHeadingClickEventListener);
+    meHeadingEle.addEventListener("click", aboutMe);
 }
 
-const meHeadingClickEventListener = function() {
+const aboutMe = function() {
     if (meDetailsExpand) {
         meDetailsExpand = false;
         meHeadingEleText = "+ About Me";

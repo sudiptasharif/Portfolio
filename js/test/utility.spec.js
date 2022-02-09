@@ -138,4 +138,16 @@ describe('utility', function () {
             assert.isNotOk(result);
         });                   
     });
+    describe('removeChildLast()', function () {
+        it('check if exception is thrown when arg1 = false', function () { 
+            var result = true;
+            var arg1; 
+            try {
+                utility.removeChildLast(arg1);
+            } catch (e) {
+                result = false;
+            }
+            assert.isNotOk(result);           
+        });  
+    });    
 });

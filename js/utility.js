@@ -15,11 +15,12 @@ const setVisible = function(element, visible) {
     if (isNull(element) || (typeof visible !== 'boolean')) {
         throw "invalid input args";
     }
-    var result = "hidden";
+    var result = ["hidden", "none"];
     if (visible) {
-        result = "visible";
+        result = ["visible", "block"];
     }
-    element.style.visibility = result;
+    element.style.visibility = result[0];
+    element.style.display = result[1];
 }
 
 const appendChildLast = function(parentEle, childEle) {
@@ -37,11 +38,11 @@ const removeChildLast = function(parentEle) {
 }
 
 // comment/uncomment as needed for testing
-module.exports = {
-    isNull,
-    isEmpty,
-    setText,
-    setVisible,
-    appendChildLast,
-    removeChildLast,
-}
+// module.exports = {
+//     isNull,
+//     isEmpty,
+//     setText,
+//     setVisible,
+//     appendChildLast,
+//     removeChildLast,
+// }
