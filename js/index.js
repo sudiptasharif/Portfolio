@@ -2,13 +2,13 @@ var meDivEle = document.getElementById("me");
 var meHeadingEle = document.getElementById("me_heading");
 var meDetailsEle = document.getElementById("me_details");
 var meDetailsExpand = false; 
-var meHeadingEleText = "+ About Me";
+var meHeadingEleText = "About Me";
 
 var workDivEle = document.getElementById("work");
 var workHeadingEle = document.getElementById("work_heading");
 var workDetailsEle = document.getElementById("work_details");
 var workDetailsExpand = false;
-var workHeadingEleText = "+ Work Experiances"; 
+var workHeadingEleText = "Work Experiences"; 
 
 const main = function() {
     meHeadingEle.addEventListener("click", aboutMe);
@@ -20,29 +20,29 @@ const main = function() {
 const aboutMe = function() {
     if (meDetailsExpand) {
         meDetailsExpand = false;
-        meHeadingEleText = "+ About Me";
+        newMeHeadingEleText = "+ " + meHeadingEleText;
         removeChildLast(meDivEle);
     } else {
         meDetailsExpand = true;
-        meHeadingEleText = "- About Me";
+        newMeHeadingEleText = "- " + meHeadingEleText;;
         appendChildLast(meDivEle, meDetailsEle);
     }
     setVisible(meDetailsEle, meDetailsExpand);
-    setText(meHeadingEle, meHeadingEleText);   
+    setText(meHeadingEle, newMeHeadingEleText);   
 }
 
 const workExperiances = function() {
     if (workDetailsExpand) {
         workDetailsExpand = false;
-        workHeadingEleText = "+ Work Experiances"; 
+        newWorkHeadingEleText = "+ " + workHeadingEleText; 
         removeChildLast(workDivEle);
     } else {
         workDetailsExpand = true;
-        workHeadingEleText = "- Work Experiances"; 
+        newWorkHeadingEleText = "- " + workHeadingEleText; 
         appendChildLast(workDivEle, workDetailsEle);
     }
     setVisible(workDetailsEle, workDetailsExpand);
-    setText(workHeadingEle, workHeadingEleText);     
+    setText(workHeadingEle, newWorkHeadingEleText);     
 }
 
 const changeMousePointer = function (event) {
