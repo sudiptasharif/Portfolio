@@ -125,6 +125,17 @@ describe('utility', function () {
                 result = false;
             }
             assert.isNotOk(result);
-        });           
+        }); 
+        it('check if exception is thrown when arg1 = false, arg2 = true', function () {
+            var result = true;
+            var arg1; 
+            var arg2 = "testEle"; // using string as a dummy truthy obj 
+            try {
+                utility.appendChildLast(arg1, arg2);
+            } catch (e) {
+                result = false;
+            }
+            assert.isNotOk(result);
+        });                   
     });
 });
