@@ -85,7 +85,7 @@ describe('utility', function () {
             var arg1;
             var arg2 = "false"; // this is false, as typeof is string
             try {
-                utility.setVisible(arg, arg);
+                utility.setVisible(arg1, arg2);
             } catch (e) {
                 result = false;
             }
@@ -96,22 +96,35 @@ describe('utility', function () {
             var arg1 = "testEle"; // using string as a dummy truthy obj
             var arg2 = "false"; // this is false, as typeof is string
             try {
-                utility.setVisible(arg, arg);
-            } catch (e) {
-                result = false;
-            }
-            assert.isNotOk(result);
-        }); 
-        it('check if exception is thrown when arg1 = false, arg2 = false', function () {
-            var result = true;
-            var arg1 = null; 
-            var arg2 = "false"; // this is false, as typeof is string
-            try {
-                utility.setVisible(arg, arg);
+                utility.setVisible(arg1, arg2);
             } catch (e) {
                 result = false;
             }
             assert.isNotOk(result);
         });               
+    });
+    describe('appendChildLast()', function () {
+        it('check if exception is thrown when arg1 = false, arg2 = false', function () {    
+            var result = true;
+            var arg1;
+            var arg2; 
+            try {
+                utility.appendChildLast(arg1, arg2);
+            } catch (e) {
+                result = false;
+            }
+            assert.isNotOk(result);       
+        });
+        it('check if exception is thrown when arg1 = true, arg2 = false', function () {
+            var result = true;
+            var arg1 = "testEle"; // using string as a dummy truthy obj
+            var arg2; 
+            try {
+                utility.appendChildLast(arg1, arg2);
+            } catch (e) {
+                result = false;
+            }
+            assert.isNotOk(result);
+        });           
     });
 });

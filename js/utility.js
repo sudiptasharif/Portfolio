@@ -36,9 +36,12 @@ const removeChildLast = function(parentEle) {
     parentEle.removeChild(parentEle.lastChild);
 }
 
-// module.exports = {
-//     isNull,
-//     isEmpty,
-//     setText,
-//     setVisible,
-// }
+// comment/uncomment as needed for testing
+module.exports = {
+    isNull,
+    isEmpty,
+    setText,
+    setVisible,
+    appendChildLast,
+    removeChildLast,
+}

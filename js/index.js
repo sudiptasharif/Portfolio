@@ -1,4 +1,3 @@
-//const { setVisible, setText } = require("./utility");
 var meDivEle = document.getElementById("me");
 var meHeadingEle = document.getElementById("me_heading");
 var meDetailsEle = document.getElementById("me_details");
